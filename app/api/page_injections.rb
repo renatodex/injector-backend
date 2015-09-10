@@ -1,6 +1,6 @@
 module PageInjections
   class API < Grape::API
-    version 'v1', using: :header
+    version 'v1'
     format :json
     prefix :api
   end
