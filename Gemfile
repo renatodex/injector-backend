@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails_admin'
+gem 'grape'
+gem 'hashie-forbidden_attributes'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
