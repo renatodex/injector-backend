@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
-  mount Accounts::API => '/'
-  mount Injections::API => '/'
-  mount PageInjections::API => '/'
-  mount Pages::API => '/'
+  mount V1::Dashboards => '/'
+  mount V1::Accounts => '/'
+  mount V1::Injections => '/'
+  mount V1::PageInjections => '/'
+  mount V1::Pages => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
