@@ -4,7 +4,7 @@ module V1
     format :json
     prefix :api
 
-    include V1::Defaults
+    include Defaults
 
     resource :accounts do
      params do
