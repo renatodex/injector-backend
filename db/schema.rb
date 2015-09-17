@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150910224857) do
+ActiveRecord::Schema.define(version: 20150917033733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,24 @@ ActiveRecord::Schema.define(version: 20150910224857) do
     t.datetime "updated_at"
   end
 
+  create_table "injection_types", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "injections", force: true do |t|
     t.string   "name"
     t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id"
+    t.integer  "injection_type_id"
   end
 
   add_index "injections", ["account_id"], name: "index_injections_on_account_id", using: :btree
+  add_index "injections", ["injection_type_id"], name: "index_injections_on_injection_type_id", using: :btree
 
   create_table "page_injections", force: true do |t|
     t.integer  "page_id"
