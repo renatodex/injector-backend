@@ -8,6 +8,13 @@ module V1
 
     resource :dashboards do
       resource :sumary do
+        get :totals do
+          {
+            pages: current_account.pages.count,
+            injections: current_account.injections.count
+          }
+        end
+
         get :pages do
           current_account.pages.sumary
         end
