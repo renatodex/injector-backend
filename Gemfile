@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'colorize'
 gem 'rails_admin'
 gem 'grape'
 gem 'hashie-forbidden_attributes'
