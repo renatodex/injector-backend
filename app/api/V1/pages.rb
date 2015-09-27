@@ -20,11 +20,11 @@ module V1
     # Member
     resources "pages/:id" do
       get do
-        Account.your_pages(token).find_by(id: id)
+        Account.your_pages(token).find_by!(id: id)
       end
 
       put do
-        Account.your_pages(token).update(id, data)
+        Account.your_pages(token).find_by!(id: id).update!(data)
       end
 
       delete do

@@ -6,6 +6,10 @@ module Defaults
       Behavior::Tokenable.validate(params[:token])
     end
 
+    rescue_from ActiveRecord::AssociationTypeMismatch do |e|
+      error_response({:message => "some data has invalid format"})
+    end
+
     rescue_from ArgumentError do |e|
       error_response({:message => "could not found required params"})
     end
